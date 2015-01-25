@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+<main class="front_page">
+	<div>
+		<% @memes.each do |meme| %>
+	  	<%= render meme %>
+		<% end %>
+	</div>
+	<section class="bet_box">
+		The memes with bets go here
+		<ul>
+			<li><span class="meme"><%= image_tag("chandra.svg", class: "chandra_xs") %></span> <strong class="bets">4</strong> bets. </li>
+			<li><span class="meme"><%= image_tag("chandra.svg", class: "chandra_xs") %></span> <strong class="bets">4</strong> bets. </li>
+			<li><span class="meme"><%= image_tag("chandra.svg", class: "chandra_xs") %></span> <strong class="bets">4</strong> bets. </li>
+			<li><span class="meme"><%= image_tag("chandra.svg", class: "chandra_xs") %></span> <strong class="bets">4</strong> bets. </li>
+			
+
+		</ul>
+	</section>
+</main>

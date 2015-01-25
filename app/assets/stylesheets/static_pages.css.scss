@@ -1,3 +1,29 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* ABOUT PAGE */
+.about {
+	.about_hero {
+		margin:0;
+		padding:0;
+		width: 100%;
+	}
+
+	#the_fuck {
+		display: block;
+		left: 0;
+		width: 50%;
+		padding: 0 0 20px;
+	}
+
+	.explanation {
+		padding: 10px 120px;
+	}
+
+	@media screen and (max-width: 550px) {
+		.explanation {
+			padding: 10px 0;
+		}
+	}
+}
