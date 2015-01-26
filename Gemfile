@@ -5,8 +5,10 @@ source 'https://rubygems.org'
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
+# use Foundation framework for styles
+gem 'foundation-rails', '5.4.5'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -30,12 +32,13 @@ gem 'spring',        group: :development
 group :development do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
-	gem "better_errors"
+	gem 'better_errors'
 	# Faker for seeds data
 	gem 'faker'
 end
-gem "binding_of_caller"
 
+gem 'binding_of_caller'
+gem 'rails_12factor'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,0 +1,36 @@
+<section class="new_meme">
+  <%= form_for(@meme) do |f| %>
+    <%= render 'shared/errors' %>
+
+    <div class="row collapse">
+      <span class="small-3 large-2 columns ">
+        <%= f.label "_title", class: "prefix" %>
+      </span>
+      <div class="small-9 large-10 columns">
+      <%= f.text_field :title,
+                       placeholder: "Miley Cyrus will become a war bear for Putin" %>
+    </div>
+
+    <div class="row collapse">
+      <span class="small-3 large-2 columns ">
+        <%= f.label "_http://", class: "prefix" %>
+      </span>
+      <div class="small-9 large-10 columns">
+      <%= f.text_field :url,
+                       placeholder: "double you double you double you dot" %>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <%= f.label :description %>
+      </div>
+      <%= form_field_error_message(@meme, :description)%>
+
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "make a bet" %>
+    </div>
+  <% end %>
+</section>

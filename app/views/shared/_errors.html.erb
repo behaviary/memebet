@@ -1,0 +1,11 @@
+  <% if @meme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meme.errors.count, "error") %> there is a problem!</h2>
+
+      <ul>
+      <% @meme.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>

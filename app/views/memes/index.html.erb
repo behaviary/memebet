@@ -1,12 +1,13 @@
+<h1><%= link_to "MAKEBET", new_meme_path %></h1>
 <%= render "shared/header" %>
 <main class="front_page">
-	<div>
-		<% @memes.each do |meme| %>
-	  	<%= render meme %>
-		<% end %>
-	</div>
 	<section class="bet_box">
 		The memes with bets go here
+		<div>
+			<% @memes.each do |meme| %>
+		  	<%= render meme %>
+			<% end %>
+		</div>
 		<ul>
 			<li><span class="meme"><%= image_tag("chandra.svg", class: "chandra_xs") %></span> <strong class="bets">4</strong> bets. </li>
 			<li><span class="meme"><%= image_tag("chandra.svg", class: "chandra_xs") %></span> <strong class="bets">4</strong> bets. </li>
