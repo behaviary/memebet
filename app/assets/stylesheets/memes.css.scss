@@ -7,17 +7,7 @@ header {
 	text-align: center;
 	.top_logo {
 		width: 33%;
-	}
-}
-
-
-/*  FRONTPAGE  */
-
-.front_page {
-	.bet_box {
-		border: 3px solid black;
-		padding: 20px;
-		margin: 80px;
+		max-width: 400px;
 	}
 }
 
@@ -26,4 +16,21 @@ header {
 .new_meme {
 	padding: 10px;
 	margin: 20px;
+}
+
+/*  INDEX MEME  */
+.index_memes {
+	margin: 0;
+	padding: 20px;
+	.bet_button {
+		display: block;
+		float: left;
+	}
+	li {
+		padding-left: 10px;
+		display: table-cell;
+	}
+	.meme_subscript {
+		font-size: 10px;
+	}
 }

@@ -35,6 +35,7 @@ group :development do
 	gem 'better_errors'
 	# Faker for seeds data
 	gem 'faker'
+	gem 'pry-rails'
 end
 
 gem 'binding_of_caller'
