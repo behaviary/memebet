@@ -1,4 +1,5 @@
-<h1><%= link_to "MAKEBET", new_meme_path %></h1>
+
+<h1><%= link_to_if user_signed_in?, "MAKEBET", new_meme_path %></h1>
 
 <%= render "shared/header" %>
 
