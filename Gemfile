@@ -1,6 +1,12 @@
 ruby "2.1.4"
 
 source 'https://rubygems.org'
+# Devise for authentication and authorization
+gem 'devise'
+# Use Simple Form for the forms (also included with Devise)
+gem 'simple_form'
+# Figaro makes config for APIs and CDNs
+gem 'figaro'
 # use postgres for heroku deploy
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
