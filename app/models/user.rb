@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :memes, foreign_key: :author_id
+  has_many :bets
 
 end
