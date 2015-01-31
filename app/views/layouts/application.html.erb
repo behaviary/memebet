@@ -7,6 +7,8 @@
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+    <!-- for reasons that I cannot fathom, this line makes sign_out work -->
+    <%= javascript_include_tag :application %>
     <%= javascript_include_tag "application" 'data-turbolinks-track' => true %>
     <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" %>
     <%= javascript_include_tag "vendor/modernizr" %>

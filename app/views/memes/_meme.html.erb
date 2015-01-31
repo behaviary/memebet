@@ -3,7 +3,7 @@
 	<li>
 		<strong class="bets"><%= meme.initial_bet %> </strong> bets say that <a href=<%= meme.url %>><%= meme.title%></a> in <%= ((Time.zone.now - meme.created_at)/60).round %> minutes.
 		<span class="row meme_subscript">
-			Bet made by <%= meme.author_id %>, <%= ((Time.zone.now - meme.created_at)/60).round %> minutes ago
+			Bet made by <%= User.find(meme.author_id).username %>, <%= ((Time.zone.now - meme.created_at)/60).round %> minutes ago
 		</span>
 	</li>
 </div>

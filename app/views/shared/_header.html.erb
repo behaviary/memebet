@@ -3,7 +3,8 @@
 	<h1><%= link_to_unless(user_signed_in?, "SIGNUP", new_user_registration_path) %> </h1>
 	<h1> <%= link_to_unless(user_signed_in?, "LOGIN", new_user_session_path) %></h1>
 	<!-- LOGOOUT is NOT WORKING CURRENTLY -->
-	<h1> <%= link_to_if(user_signed_in?, "LOGOUT", destroy_user_session_path, method: :delete) %></h1>
+	<%= link_to_if(user_signed_in?,"LOGOUT", destroy_user_session_url, method: :delete) do %><h1></h1>
+	<% end %>
 	<header>
 		<%= image_tag "memebet.svg",
 									 {"data-svg-fallback" => "#{image_path('memebet.png')}",
