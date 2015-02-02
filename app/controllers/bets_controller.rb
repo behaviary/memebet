@@ -1,5 +1,7 @@
 class BetsController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def create
 		@bet = bettable_type.bets.build(user_id: current_user.id)
 		if @bet.save

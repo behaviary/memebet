@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131020424) do
+ActiveRecord::Schema.define(version: 20150202011359) do
 
   create_table "bets", force: true do |t|
     t.integer  "user_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150131020424) do
     t.string   "bettable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "initial_value"
   end
 
   create_table "memes", force: true do |t|

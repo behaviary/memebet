@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'static_pages/about'
 
   root 'static_pages#about'
-  resources :memes
+  resources :memes do
+    resources :bets, only: [:create, :destroy]
+  end
   devise_for :users
 
 
