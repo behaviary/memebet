@@ -1,15 +1,17 @@
 class BetsController < ApplicationController
 
-	before_action :authenticate_user!
 
 	def create
+
+		# figure out how to get initial value from the form to show up here
+		# I am too sick to do it right now :p
 		@bet = bettable_type.bets.build(user_id: current_user.id)
-		if @bet.save
-			redirect_to request.referer
-		else
-			flash[:error] = "Something went wrong, bet didn't work"
-			redirect_to request.referer
-		end
+	  @bet.save
+		# 	flash[:success] = "The bet was made also, bro"
+		# else
+		# 	flash[:error] = "Something went wrong, bet didn't work"
+		# 	redirect_to request.referer
+		# end
 	end
 
 	def destroy

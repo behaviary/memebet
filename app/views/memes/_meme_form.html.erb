@@ -3,6 +3,10 @@
     <%= render 'shared/errors' %>
 
     <div class="row collapse">
+        <%= simple_fields_for :bets do |b| %>
+          <%= b.input :initial_value, collection: 1..100 %>
+        <% end %>
+
       <span class="small-3 large-2 columns ">
         <%= f.label "_prediction", class: "prefix" %>
       </span>
