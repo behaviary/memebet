@@ -1,17 +1,23 @@
 class BetsController < ApplicationController
 
 
-	def create
+	def new
+		@resource = bettable_type
+		@bet = @resource.bets.build
+	end
 
+	def create
+		blah
 		# figure out how to get initial value from the form to show up here
 		# I am too sick to do it right now :p
-		@bet = bettable_type.bets.build(user_id: current_user.id)
+		@bet = bettable_type.bets.
+										build(user_id: current_user.id)
 	  @bet.save
-		# 	flash[:success] = "The bet was made also, bro"
-		# else
-		# 	flash[:error] = "Something went wrong, bet didn't work"
-		# 	redirect_to request.referer
-		# end
+			flash[:success] = "The bet was made also, bro"
+		else
+			flash[:error] = "Something went wrong, bet didn't work"
+			redirect_to request.referer
+		end
 	end
 
 	def destroy

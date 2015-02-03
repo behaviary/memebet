@@ -15,11 +15,15 @@ class MemesController < ApplicationController
 	end
 
 	def create
+
 		@meme = current_user.memes.build(whitelisted_meme_params)
 		if @meme.save
 			# change this to highlight the created meme
 			flash[:success] = "You have created a meme!"
 			redirect_to memes_path
+		else
+			flash[:error] = "There was a problem"
+			redirect_to new_memes_path
 		end
 	end
 
@@ -31,8 +35,9 @@ class MemesController < ApplicationController
 
 	private
 	def whitelisted_meme_params
-	  params.require(:meme).permit(:title, :url, :description,
-	  														 bets_attributes: [:initial_value])
+	  params.require(:meme).
+	  	permit(:title, :url, :description,
+	  				 bets_attributes: [:initial_value])
 	end
 
 end
