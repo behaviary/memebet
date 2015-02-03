@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :memes do
     resources :bets, only: [:create, :destroy]
   end
+
   devise_for :users
 
 

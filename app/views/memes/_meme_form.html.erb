@@ -4,7 +4,7 @@
 
     <div class="row collapse">
         <%= f.simple_fields_for :bets do |b| %>
-          <%= b.text_field :initial_value, collection: 1..100 %>
+          <%= b.input :initial_value, collection: 1..100 %>
         <% end %>
 
       <span class="small-3 large-2 columns ">

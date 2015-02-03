@@ -2,16 +2,13 @@ class BetsController < ApplicationController
 
 
 	def new
-		@resource = bettable_type
-		@bet = @resource.bets.build
+		@bet = bettable_type.bets.build
 	end
 
 	def create
-		blah
 		# figure out how to get initial value from the form to show up here
 		# I am too sick to do it right now :p
-		@bet = bettable_type.bets.
-										build(user_id: current_user.id)
+		@bet = bettable_type.bets.build(user_id: current_user.id)
 	  @bet.save
 			flash[:success] = "The bet was made also, bro"
 		else
@@ -25,8 +22,12 @@ class BetsController < ApplicationController
 
 	private
 
+	def whitelisted_bets_params
+		params.require(:bet).permit(:user_id, :bettable_type, :bettable_id, :initial_value)
+	end
+
   def bettable_type
-  	bettable_class.find(params[parent_id])
+  	bettable_class.find(initial_value: params[:bets][:initial_value])
   end
 
   def bettable_class

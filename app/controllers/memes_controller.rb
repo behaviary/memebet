@@ -12,18 +12,19 @@ class MemesController < ApplicationController
 
 	def new
 		@meme = Meme.new
+		@meme.bets.build
 	end
 
 	def create
-
 		@meme = current_user.memes.build(whitelisted_meme_params)
-		if @meme.save
+		@bet = @meme.bets.first
+		if (@meme.save && @bet.save)
 			# change this to highlight the created meme
 			flash[:success] = "You have created a meme!"
 			redirect_to memes_path
 		else
 			flash[:error] = "There was a problem"
-			redirect_to new_memes_path
+			redirect_to new_meme_path
 		end
 	end
 
