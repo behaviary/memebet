@@ -37,7 +37,7 @@ class MemesController < ApplicationController
 	private
 	def whitelisted_meme_params
 	  params.require(:meme).
-	  	permit(:title, :url, :description,
+	  	permit(:title, :url, :description, :maturation_date,
 	  				 bets_attributes: [:initial_value])
 	end
 

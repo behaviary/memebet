@@ -1,9 +1,10 @@
 <div class="meme row">
 	<span class="bet_button"><%= link_to(image_tag("chandra.svg", {class: "chandra_xs", title: meme.description}), "#") %></span>
 	<li>
-		<strong class="bets"><%= meme.initial_bet %> </strong> bets say that <a href=<%= meme.url %>><%= meme.title%></a> in <%= ((Time.zone.now - meme.created_at)/60).round %> minutes.
+		<!-- convert this into helpers! -->
+		<strong class="bets"><%= pluralize(meme.bets.count, :bet) %> </strong> that <a href=<%= meme.url %>><%= meme.title%></a> by <%= meme.maturation_date.to_formatted_s(:long) %>.
 		<span class="row meme_subscript">
-			Bet made by <%= User.find(meme.author_id).username %>, <%= ((Time.zone.now - meme.created_at)/60).round %> minutes ago
+			first bet by <%= User.find(meme.author_id).username %>, <%= ((Time.zone.now - meme.created_at)/60).round %> minutes ago. <%= meme.bets.sum(:initial_value) %> points on the line.
 		</span>
 	</li>
 </div>

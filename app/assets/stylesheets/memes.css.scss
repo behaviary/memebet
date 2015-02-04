@@ -18,7 +18,7 @@ header {
 	margin: 20px;
 }
 
-/*  INDEX MEME  */
+/* INDEX MEME */
 .index_memes {
 	margin: 0;
 	padding: 20px;
@@ -29,8 +29,29 @@ header {
 	li {
 		padding-left: 10px;
 		display: table-cell;
+		width: 90%;
 	}
 	.meme_subscript {
 		font-size: 10px;
+	}
+}
+
+/* MEME FORM */
+.new_meme {
+	.maturation_date_wrapper {
+		// select.select-date {
+		  float: left;
+		// }
+
+	  select:first-of-type{
+	    width: 30%;
+	  }
+	  select:nth-of-type(2){
+	    width: 20%;
+	  }
+	  select:last-of-type{
+	    margin-right: 0;
+	    width: 30%;
+	  }
 	}
 }
