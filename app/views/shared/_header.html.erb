@@ -1,9 +1,12 @@
 
-	<h1>MEMEBET</h1>
-	<h1><%= link_to_unless(user_signed_in?, "SIGNUP", new_user_registration_path) %> </h1>
-	<h1> <%= link_to_unless(user_signed_in?, "LOGIN", new_user_session_path) %></h1>
+	<h1 style="display:none;">MEMEBET</h1>
+
+	<% unless user_signed_in? %>
+		<p class="nav_links"><%= link_to("SIGNUP", new_user_registration_path) %> </p>
+		<p class="nav_links"> <%= link_to("LOGIN", new_user_session_path) %></p>
+	<% else %>
 	<!-- LOGOOUT is NOT WORKING CURRENTLY -->
-	<%= link_to_if(user_signed_in?,"LOGOUT", destroy_user_session_url, method: :delete) do %><h1></h1>
+		<%= link_to("LOGOUT", destroy_user_session_url,{ method: :delete, class: "nav_links"})%>
 	<% end %>
 	<header>
 		<%= image_tag "memebet.svg",
