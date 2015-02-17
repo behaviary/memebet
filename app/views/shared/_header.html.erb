@@ -9,8 +9,10 @@
 		<%= link_to("LOGOUT", destroy_user_session_url,{ method: :delete, class: "nav_links"})%>
 	<% end %>
 	<header>
-		<%= image_tag "memebet.svg",
+		<%= link_to(memes_path) do %>
+			<%= image_tag "memebet.svg",
 									 {"data-svg-fallback" => "#{image_path('memebet.png')}",
 									 alt: "memebet",
 									 class: "top_logo"} %>
+    <% end %>
 	</header>

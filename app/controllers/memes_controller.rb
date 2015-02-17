@@ -8,6 +8,8 @@ class MemesController < ApplicationController
 	end
 
 	def show
+		@meme = Meme.find(params[:id])
+		@bets = @meme.bets
 	end
 
 	def new
