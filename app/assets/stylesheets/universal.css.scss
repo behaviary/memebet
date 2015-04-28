@@ -8,9 +8,27 @@ body{
 }
 ul {
 		list-style: none;
-
 }
 .chandra_xs {
 	height: 40px;
 	align: middle;
+}
+/* SHARED HEADER */
+header {
+	text-align: center;
+	margin: 2em 0;
+	.top_logo {
+		width: 33%;
+		max-width: 400px;
+	}
+}
+/* NEW MEME */
+.new_meme {
+	padding: 10px;
+	margin: 20px;
+}
+/*  MEME HOLDER  */
+	.bet_box {
+	border: 3px solid black;
+	margin-top:20px;
 }

@@ -4,5 +4,6 @@
 $ ->
   clicks = 0
   $(".meme").on "click", ->
+    # ajax goes here
     clicks += 1
     $(".bets").text clicks

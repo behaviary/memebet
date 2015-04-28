@@ -1,18 +1,31 @@
+<h1 style="display:none;">MEMEBET</h1>
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1>memebet</h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
 
-	<h1 style="display:none;">MEMEBET</h1>
+  <section class="top-bar-section">
+    <ul class="right">
+      <% if user_signed_in? %>
+      	<li class="active"><%= link_to("MAKEBET", new_meme_path) %></li>
+      	<li><%= link_to("LOGOUT", destroy_user_session_url, {method: :delete, class: "nav_links"})%></li>
+      <% else %>
+      	<li class="active"><%= link_to("SIGNUP", new_user_registration_path) %> </li>
+      	<li> <%= link_to("LOGIN", new_user_session_path) %></li>
+      <% end %>
+    </ul>
+  </section>
+</nav>
 
-	<% unless user_signed_in? %>
-		<p class="nav_links"><%= link_to("SIGNUP", new_user_registration_path) %> </p>
-		<p class="nav_links"> <%= link_to("LOGIN", new_user_session_path) %></p>
-	<% else %>
-	<!-- LOGOOUT is NOT WORKING CURRENTLY -->
-		<%= link_to("LOGOUT", destroy_user_session_url,{ method: :delete, class: "nav_links"})%>
-	<% end %>
-	<header>
-		<%= link_to(memes_path) do %>
-			<%= image_tag "memebet.svg",
-									 {"data-svg-fallback" => "#{image_path('memebet.png')}",
-									 alt: "memebet",
-									 class: "top_logo"} %>
-    <% end %>
-	</header>
+<header>
+	<%= link_to(memes_path) do %>
+		<%= image_tag "memebet.svg",
+								 {"data-svg-fallback" => "#{image_path('memebet.png')}",
+								 alt: "memebet",
+								 class: "top_logo"} %>
+  <% end %>
+</header>

@@ -2,30 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* SHARED HEADER */
-header {
-	text-align: center;
-	.top_logo {
-		width: 33%;
-		max-width: 400px;
-	}
-}
-
-/* NEW MEME */
-
-.new_meme {
-	padding: 10px;
-	margin: 20px;
-}
-
 /* INDEX MEME */
 .index_memes {
 	margin: 0;
 	padding: 20px;
-	.bet_button {
-		display: block;
-		float: left;
-	}
+}
+
+.bet_button {
+	display: block;
+	float: left;
+}
+.meme {
 	li {
 		padding-left: 10px;
 		display: table-cell;
@@ -35,6 +22,7 @@ header {
 		font-size: 10px;
 	}
 }
+
 
 /* MEME FORM */
 .new_meme {
