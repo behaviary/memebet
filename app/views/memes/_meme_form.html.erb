@@ -6,7 +6,7 @@
       <div class="row">
         <div class="small-5 medium-3 columns">
           <%= f.simple_fields_for :bets do |b| %>
-            <%= b.input :initial_value, collection: 1..100, required: false %>
+            <%= b.input :initial_value, number: {min_max: 1..100}, required: true %>
           <% end %>
         </div>
         <div class="maturation_date_wrapper small-5 columns">
@@ -38,7 +38,7 @@
 
     <div class="row">
       <div class="large-12 columns">
-        <%= f.label :description, required: false %>
+        <%= f.label :reasoning, required: false %>
       </div>
       <%= form_field_error_message(@meme, :description)%>
 

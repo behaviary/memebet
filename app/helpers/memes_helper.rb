@@ -8,4 +8,16 @@ module MemesHelper
 	  end
 	end
 
+	def meme_author(meme)
+		User.find(meme.author_id).username
+	end
+
+	def minutes_ago(meme)
+		((Time.zone.now - meme.created_at)/60).round
+	end
+
+	def build_link(meme)
+		meme_path(meme.id)
+	end
+
 end
