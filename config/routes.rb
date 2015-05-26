@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#about'
   resources :memes do
-    resources :bets, only: [:create, :destroy]
+    resources :bets, only: [:new, :create, :destroy]
   end
 
   devise_for :users

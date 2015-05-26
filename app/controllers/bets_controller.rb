@@ -2,7 +2,8 @@ class BetsController < ApplicationController
 
 
 	def new
-		@bet = bettable_type.bets.build
+		@bet = Bet.new
+		@meme = Meme.find(params[:meme_id])
 	end
 
 	def create
