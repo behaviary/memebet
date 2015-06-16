@@ -1,5 +1,4 @@
 ruby "2.1.4"
-
 source 'https://rubygems.org'
 # Devise for authentication and authorization
 gem 'devise'
@@ -9,6 +8,8 @@ gem 'simple_form'
 gem 'figaro'
 # use postgres for heroku deploy
 gem 'pg'
+# Assets about to get served
+gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # use Foundation framework for styles
