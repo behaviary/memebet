@@ -1,20 +1,19 @@
 class BetsController < ApplicationController
 
-
 	def new
-		@bet = Bet.new
 		@meme = Meme.find(params[:meme_id])
+		@bet = @meme.bets.new
 	end
 
 	def create
-		# figure out how to get initial value from the form to show up here
-		# I am too sick to do it right now :p
-		@bet = bettable_type.bets.build(user_id: current_user.id)
+		@meme = Meme.find(params[:meme_id])
+		@bet = @meme.bets.build(whitelisted_bets_params)
 	  if @bet.save
 			flash[:success] = "The bet was made also, bro"
+			redirect_to root_path
 		else
 			flash[:error] = "Something went wrong, bet didn't work"
-			redirect_to request.referer
+			redirect_to request.referrer
 		end
 	end
 

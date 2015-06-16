@@ -2,29 +2,33 @@
   <%= simple_form_for @meme do |f| %>
     <%= render 'shared/errors' %>
 
-    <div class="row collapse">
-      <div class="row">
-        <div class="small-5 medium-3 columns">
-          <%= f.simple_fields_for :bets do |b| %>
-            <%= b.input :initial_value, number: {min_max: 1..100}, required: true %>
-          <% end %>
-        </div>
-        <div class="maturation_date_wrapper small-5 columns">
-          <%= f.input :maturation_date, as: :date,
-                                  start_year: Date.today.year,
-                                  end_year: Date.today.year + 100,
-                                  order: [:month, :day, :year],
-                                  use_short_month: true,
-                                  required: false %>
-        </div>
-      </div>
 
+    <div class="row collapse">
+      <div class="small-4 center columns">
+        <%= f.simple_fields_for :bets do |b| %>
+          <%= b.input :initial_value, number: {min_max: 1..100}, required: true %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row collapse">
+      <div class="maturation_date_wrapper small-12 columns">
+        <%= f.input :maturation_date, as: :date,
+                                start_year: Date.today.year,
+                                end_year: Date.today.year + 100,
+                                order: [:month, :day, :year],
+                                use_short_month: true,
+                                required: false %>
+      </div>
+    </div>
+
+    <div class="row collapse">
       <span class="small-3 large-2 columns ">
         <%= f.label "_prediction", class: "prefix", required: false %>
       </span>
       <div class="small-9 large-10 columns">
-      <%= f.text_field :title,
-                       placeholder: "Miley Cyrus will become a war bear for Putin" %>
+        <%= f.text_field :title, placeholder: "Miley Cyrus will become a war bear for Putin" %>
+      </div>
     </div>
 
     <div class="row collapse">
@@ -32,8 +36,7 @@
         <%= f.label "_url", class: "prefix", required: false %>
       </span>
       <div class="small-9 large-10 columns">
-      <%= f.text_field :url,
-                       placeholder: "double you double you double you dot" %>
+      <%= f.text_field :url, placeholder: "double you double you double you dot" %>
     </div>
 
     <div class="row">
