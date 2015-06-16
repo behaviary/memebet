@@ -14,8 +14,8 @@
   <body>
     <%= render "shared/header" %>
     <% flash.each do |type, message| %>
-      <div>
-        <strong><%= type %>! <%= message %></strong>
+      <div class="flash <%=type%>">
+        <strong><%= type.titleize %>! <%= message %></strong>
       </div>
     <% end %>
 

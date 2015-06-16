@@ -28,7 +28,20 @@ header {
 	margin: 20px;
 }
 /*  MEME HOLDER  */
-	.bet_box {
+.bet_box {
 	border: 3px solid black;
 	margin-top:20px;
 }
+
+.flash {
+	text-align: center;
+}
+
+.success {
+	background-color: lightgreen;
+}
+
+.error {
+	background-color: red;
+}
+

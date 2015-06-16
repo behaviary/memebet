@@ -1,15 +1,26 @@
 class BetsController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def new
 		@meme = Meme.find(params[:meme_id])
+		if !!@meme.bets.find_by(user_id: current_user.id)
+			flash[:error] = "You already bet on this!"
+			redirect_to root_path
+		end
 		@bet = @meme.bets.new
 	end
 
 	def create
 		@meme = Meme.find(params[:meme_id])
 		@bet = @meme.bets.build(whitelisted_bets_params)
+		@bet.user_id = current_user.id
 	  if @bet.save
-			flash[:success] = "The bet was made also, bro"
+	  	success = ["You got a deal",
+	  						 "The bet was made also, bro",
+	  						 "You're on!",
+	  						 "You just put your points where your internet is!"]
+			flash[:success] = success[rand(4)]
 			redirect_to root_path
 		else
 			flash[:error] = "Something went wrong, bet didn't work"

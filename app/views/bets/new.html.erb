@@ -1,16 +1,17 @@
 <section id="betModal<%=@meme.id%>" class="new_bet">
-  	<div class="row collapse">
+  	<div class="row">
+      <h4>This meme matures <%= @meme.maturation_date %></h4>
   		<div>
-  			<h2>This meme matures <%= @meme.maturation_date %></h2>
-  		</div>
-  	  <%= form_for @bet, url: meme_bets_path do |b| %>
-	  	  <div class="small-4 center columns">
-	  	    <%= b.number_field :initial_value, number: {min_max: 1..100}, required: true %>
-	  	  </div>
-	  	  <div class="actions">
-	  	    <%= b.submit "make a bet" %>
-	  	  </div>
-  	  <% end %>
-  	</div>
+        <h3>How much you wanna bet?</h3>
+      </div>
+      <%= form_for @bet, url: meme_bets_path do |b| %>
+        <div class="small-4 center columns">
+          <%= b.number_field :initial_value, number: {min_max: 1..100}, required: true %>
+        </div>
+        <div class="actions">
+          <%= b.submit "make a bet" %>
+        </div>
+      <% end %>
+    </div>
     <%= render 'shared/errors' %>
 </section>

@@ -1,6 +1,5 @@
 <div class="meme row">
 	<span class="bet_button"><%= link_to("BET »", new_meme_bet_path(meme), id: bet_id_tag(meme), data_reveal_id: 'betModal' + meme.id.to_s) %></span>
-	<!-- Sorry future Peter! I'm too tired to figore this out now. Good Luck! -->
 	<li>
 		<strong class="bets"><%= pluralize(meme.bets.count, 'bet') %> </strong> that <%= link_to(meme.title, meme_path(meme))%> by <%= meme.maturation_date.to_formatted_s(:long) %>.
 		<span class="row meme_subscript">
